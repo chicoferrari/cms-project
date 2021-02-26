@@ -19,7 +19,7 @@ public class UserService {
         user.setIdentity(userRequest.getIdentity());
         user.setName(userRequest.getName());
         user.setRole(userRequest.getRole());
-        return this,userRepository.save(user);
+        return this.userRepository.save(user);
     }
 
     public User create (UserRequest userRequest) {
@@ -28,7 +28,7 @@ public class UserService {
         user.setIdentity(userRequest.getIdentity());
         user.setName(userRequest.getName());
         user.setRole(userRequest.getRole());
-        return this,userRepository.save(user);
+        return this.userRepository.save(user);
     }
 
     public void delete(String id) {
@@ -37,7 +37,7 @@ public class UserService {
     }
 
     public List<User> findAll() {
-        return this,userRepository.findAll();
+        return this.userRepository.findAll();
     }
 
     public User findOne(String id) {
