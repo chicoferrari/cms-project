@@ -2,7 +2,7 @@ package cms.project.Posts;
 
 import java.util.Set;
 
-import cms.project.Users.*;
+import cms.project.base.*;
 
 import lombok.Data;
 

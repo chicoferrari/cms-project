@@ -1,4 +1,4 @@
-package cms.project.Users;
+package cms.project.base;
 
 public enum Role {
 

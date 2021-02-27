@@ -1,4 +1,7 @@
-package cms.project.Users;
+package cms.project.controller;
+
+import cms.project.base.Category;
+import cms.project.vo.CategoryRequest;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,33 +17,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/category")
+public class CategoryController {
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findOne(@PathVariable("id") String id) {
-        return ResponseEntity.ok(new User());
+    public ResponseEntity<Category> findOne(@PathVariable("id") String id) {
+        return ResponseEntity.ok(new Category());
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        return ResponseEntity.ok(Arrays.asList(new User(), new User()));
+    public ResponseEntity<List<Category>> findAll(){
+        return ResponseEntity.ok(Arrays.asList(new Category(), new Category()));
     }
 
     @PostMapping
-    public ResponseEntity<User> newUser(UserRequest userRequest){
-        return new ResponseEntity<>(new User(), HttpStatus.CREATED);
+    public ResponseEntity<Category> newCategory(CategoryRequest category){
+        return new ResponseEntity<>(new Category(), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void removeUser(@PathVariable("id") String id) {
+    public void removeCategory(@PathVariable("id") String id) {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") String id, User userRequest) {
-        return new ResponseEntity<>(new User(), HttpStatus.OK);
+    public ResponseEntity<Category> updateCategory(@PathVariable("id") String id, CategoryRequest category) {
+        return new ResponseEntity<>(new Category(), HttpStatus.OK);
     }
 
 }

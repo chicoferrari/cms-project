@@ -1,5 +1,7 @@
 package cms.project.Posts;
 
+import cms.project.base.*;
+
 import java.util.Set;
 
 import lombok.Data;

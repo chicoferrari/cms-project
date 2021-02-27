@@ -1,9 +1,11 @@
-package cms.project.Posts;
+package cms.project.base;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
 
@@ -13,8 +15,10 @@ import lombok.Data;
 public class Category {
 
     @Id
-    @GeneratedValue
-    private String id;
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2" )
+    String id;
 
     String name;
+
 }

@@ -1,6 +1,7 @@
-package cms.project.Users;
+package cms.project.service;
 
-import java.util.List;
+import cms.project.base.User;
+import cms.project.vo.UserRequest;
 
 public interface UserService {
 
@@ -10,6 +11,6 @@ public interface UserService {
 
     void delete(String id);
 
-    List<User> findAll();
+    Iterable<User> findAll();
 
 }
