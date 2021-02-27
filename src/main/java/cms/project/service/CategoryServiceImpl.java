@@ -29,8 +29,8 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Transactional
     public void delete(String id) {
-        final Category category = this.categoryRepository.findOne(id);
-        this.categoryRepository.delete(category);
+        final Optional<Category> category = this.categoryRepository.findById(id);
+        category.ifPresent(this.categoryRepository::delete);
     }
 
     public List<Category> findAll() {
